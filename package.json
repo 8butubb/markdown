@@ -1,22 +1,13 @@
 {
-  "name": "electron-quick-start",
+  "name": "my-electron-app",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "description": "A Markdown editor built with Electron",
+  "main": "app/main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "electron": "^29.1.6"
+  "dependencies": {
+    "electron": "^29.1.6",
+    "marked": "^12.0.1"
   }
 }

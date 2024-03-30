@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Editor</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: space-between;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    #editor-container {
+      width: 50%;
+      padding: 10px;
+    }
+
+    #preview-container {
+      width: 50%;
+      padding: 10px;
+      border-left: 1px solid #ccc;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <div id="editor-container">
+    <textarea id="markdown-input" placeholder="Enter your Markdown here..."></textarea>
+  </div>
+  <div id="preview-container"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.0/marked.min.js"></script>
+  <script>
+    const inputElement = document.getElementById('markdown-input');
+    const previewElement = document.getElementById('preview-container');
+
+    function updatePreview() {
+      const markdownText = inputElement.value;
+      const htmlText = marked(markdownText);
+      previewElement.innerHTML = htmlText;
+    }
+
+    inputElement.addEventListener('input', updatePreview);
+    inputElement.addEventListener('keydown', updatePreview); // 添加按键事件监听器
+
+    // 初始预览
+    updatePreview();
+  </script>
+</body>
+</html>
